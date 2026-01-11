@@ -6,6 +6,7 @@ use App\Models\AdminMenuItem;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
+use App\Support\Settings;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -43,10 +44,16 @@ class HandleInertiaRequests extends Middleware
             ...parent::share($request),
             'name' => config('app.name'),
             'quote' => ['message' => trim($message), 'author' => trim($author)],
+            
             'auth' => [
                 'user' => $request->user(),
             ],
             'sidebarOpen' => ! $request->hasCookie('sidebar_state') || $request->cookie('sidebar_state') === 'true',
+            'adsense' => [
+                'enabled' => Settings::get('adsense_enabled', '0') === '1',
+                'client' => Settings::get('adsense_client', ''),
+                'slotDefault' => Settings::get('adsense_slot_default', ''),
+            ],
         ];
     }
 }

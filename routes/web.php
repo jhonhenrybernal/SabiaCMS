@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\AdminSeoController;
 use App\Http\Controllers\Admin\AdminRobotsController;
 use App\Http\Controllers\Admin\AdminSitemapController;
 use App\Http\Controllers\Admin\AdminMenuController;
+use App\Http\Controllers\Admin\AdminAdSenseController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -46,6 +47,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     Route::get('telescope', fn () => redirect('/telescope'))->name('telescope');
     Route::get('telescope-panel', [AdminTelescopeController::class, 'index'])->name('telescope.panel');
+    
+    Route::get('adsense', [AdminAdSenseController::class, 'edit'])->name('adsense.edit');
+    Route::post('adsense', [AdminAdSenseController::class, 'update'])->name('adsense.update');
 
 });
 

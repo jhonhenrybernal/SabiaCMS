@@ -11,6 +11,7 @@ const nav = [
   { label: 'SEO', href: '/admin/seo' },
   { label: 'Robots', href: '/admin/robots' },
   { label: 'Sitemap', href: '/admin/sitemap' },
+  { label: 'Adsense', href: '/admin/adsense' },
   { label: 'Telescope', href: '/admin/telescope' },
 ]
 </script>

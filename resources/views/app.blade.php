@@ -32,8 +32,7 @@
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
-        <link rel="icon" href="/favicon.ico" sizes="any">
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+        <link rel="icon" href="/icon-sabiacms.png" sizes="any">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -44,6 +43,16 @@
             'resources/js/app.ts',
         ])
         @inertiaHead
+        @php
+        $adsenseEnabled = \App\Support\Settings::get('adsense_enabled', '0') === '1';
+        $adsenseClient  = \App\Support\Settings::get('adsense_client', '');
+        @endphp
+
+        @if($adsenseEnabled && filled($adsenseClient))
+        <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ $adsenseClient }}"
+            crossorigin="anonymous"></script>
+        @endif
     </head>
     <body class="font-sans antialiased">
         @inertia
