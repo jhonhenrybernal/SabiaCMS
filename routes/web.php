@@ -21,8 +21,8 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-Route::get('dashboard', function () {
-    return Inertia::render('Dashboard');
+Route::get('/dashboard', function () {
+    return redirect('/admin');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/robots.txt', [RobotsController::class, 'show'])->name('robots.public');

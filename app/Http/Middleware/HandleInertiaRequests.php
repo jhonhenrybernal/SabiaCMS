@@ -54,6 +54,20 @@ class HandleInertiaRequests extends Middleware
                 'client' => Settings::get('adsense_client', ''),
                 'slotDefault' => Settings::get('adsense_slot_default', ''),
             ],
+            'seo' => [
+                'site_name' => Settings::get('seo_site_name', config('app.name')),
+                'title' => Settings::get('seo_title', ''),
+                'description' => Settings::get('seo_description', ''),
+                'keywords' => Settings::get('seo_keywords', ''),
+
+                'robots' => Settings::get('seo_robots', 'index,follow'),
+                'canonical_base' => Settings::get('seo_canonical_base', ''),
+                'og_image' => Settings::get('seo_og_image', ''),
+                'google_site_verification' => Settings::get('seo_google_site_verification', ''),
+                'bing_site_verification' => Settings::get('seo_bing_site_verification', ''),
+                'schema_enabled' => Settings::get('seo_schema_enabled', '1') === '1',
+                'hreflang_enabled' => Settings::get('seo_hreflang_enabled', '1') === '1',
+            ],
         ];
     }
 }

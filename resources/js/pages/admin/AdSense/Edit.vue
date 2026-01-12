@@ -21,6 +21,9 @@ const save = () => form.post('/admin/adsense')
 
 <template>
   <AdminLayout>
+        <div
+            class="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4"
+        >
     <div class="flex flex-col gap-2">
       <h1 class="text-xl font-semibold">Google AdSense</h1>
 
@@ -103,6 +106,7 @@ const save = () => form.post('/admin/adsense')
           Nota: si AdSense está desactivado globalmente, el componente no renderiza nada.
         </p>
       </div>
+    </div>
     </div>
   </AdminLayout>
 </template>

@@ -24,6 +24,9 @@ const siteOrigin = window.location.origin
 
 <template>
   <AdminLayout>
+    <div
+            class="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4"
+        >
     <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
       <div>
         <h1 class="text-xl font-semibold">Robots.txt</h1>
@@ -96,6 +99,7 @@ const siteOrigin = window.location.origin
           <a :href="publicUrl" class="underline" target="_blank">{{ publicUrl }}</a>
         </div>
       </div>
+    </div>
     </div>
   </AdminLayout>
 </template>

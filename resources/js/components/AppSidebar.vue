@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/sidebar'
 import type { NavItem } from '@/types'
 import { Link } from '@inertiajs/vue3'
-import { LayoutGrid, MessageSquare, Search, Bot, Map, Telescope } from 'lucide-vue-next'
+import { LayoutGrid, MessageSquare, Search, Bot, Map, Telescope, BadgeDollarSign  } from 'lucide-vue-next'
 import AppLogo from './AppLogo.vue'
 
 const mainNavItems: NavItem[] = [
@@ -41,6 +41,11 @@ const mainNavItems: NavItem[] = [
     title: 'Sitemap',
     href: '/admin/sitemap',
     icon: Map,
+  },
+  {
+    title: 'AdSense',
+    href: '/admin/adsense',
+    icon: BadgeDollarSign,
   },
   {
     title: 'Telescope',

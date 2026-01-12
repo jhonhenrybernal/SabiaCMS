@@ -14,6 +14,9 @@ const regenerate = () => {
 
 <template>
   <AdminLayout>
+    <div
+            class="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4"
+        >
     <div class="flex flex-col gap-2">
       <h1 class="text-xl font-semibold">Sitemap</h1>
 
@@ -62,6 +65,7 @@ const regenerate = () => {
           Tip: también debes declarar esta URL en <code>robots.txt</code>.
         </p>
       </div>
+    </div>
     </div>
   </AdminLayout>
 </template>
